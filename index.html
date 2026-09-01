@@ -3,41 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex Rivera — Software Engineer</title>
-<meta name="description" content="Portfolio of Alex Rivera, software engineer building fast, considered products.">
+<title>Jaison V J — AI Engineer</title>
+<meta name="description" content="Jaison V J, AI Engineer specializing in agentic AI, multi-agent systems, and cloud data engineering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper: #EEEDE7;
-    --paper-raised: #F6F5F0;
-    --ink: #1C201D;
-    --ink-soft: #565C55;
-    --line: #D6D3C7;
-    --forest: #2F6F62;
-    --forest-deep: #204B42;
-    --rust: #B85C2E;
-    --max-w: 760px;
+    --bg: #EBEEF0;
+    --panel: #FFFFFF;
+    --ink: #12161B;
+    --ink-soft: #545E68;
+    --ink-faint: #889098;
+    --line: #D2D8DC;
+    --blue: #2A4E8D;
+    --blue-deep: #1B3564;
+    --amber: #C8862E;
+    --max-w: 860px;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
-
   html{ scroll-behavior:smooth; }
 
   body{
-    background:var(--paper);
+    background:var(--bg);
     color:var(--ink);
-    font-family:'Inter', sans-serif;
+    font-family:'IBM Plex Sans', sans-serif;
     font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
 
-  ::selection{ background:var(--forest); color:var(--paper-raised); }
-
+  ::selection{ background:var(--blue); color:#fff; }
   a{ color:inherit; }
-
   img{ max-width:100%; display:block; }
 
   .wrap{
@@ -46,23 +44,31 @@
     padding:0 28px;
   }
 
-  /* ---------- Header / nav ---------- */
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  /* ---------- Header ---------- */
   header{
-    padding:32px 0 0;
-  }
-  .nav-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    padding-bottom:20px;
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(235,238,240,0.92);
+    backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  .mark{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.05rem;
-    letter-spacing:-0.01em;
+  .nav-row{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:18px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
   }
+  .mark{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:1.02rem;
+  }
+  .mark span{ color:var(--blue); }
   nav ul{
     list-style:none;
     display:flex;
@@ -70,48 +76,74 @@
   }
   nav a{
     text-decoration:none;
-    font-size:0.92rem;
+    font-size:0.9rem;
     color:var(--ink-soft);
-    transition:color 0.15s ease;
   }
   nav a:hover, nav a:focus-visible{ color:var(--ink); }
 
   /* ---------- Hero ---------- */
   .hero{
-    padding:64px 0 72px;
+    padding:68px 0 60px;
   }
-  .hero-role{
-    font-size:0.95rem;
-    color:var(--forest-deep);
-    margin-bottom:14px;
+  .status-line{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:22px;
+  }
+  .status-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--amber);
+    box-shadow:0 0 0 3px rgba(200,134,46,0.18);
+  }
+  .status-line span{
+    font-size:0.85rem;
+    color:var(--ink-soft);
   }
   h1{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:clamp(2.1rem, 5.4vw, 3.2rem);
-    line-height:1.12;
-    letter-spacing:-0.015em;
-    max-width:15ch;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.2rem, 5.6vw, 3.4rem);
+    line-height:1.08;
+    letter-spacing:-0.02em;
+    max-width:16ch;
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--blue);
   }
   .hero-lede{
     margin-top:22px;
-    max-width:52ch;
+    max-width:56ch;
     color:var(--ink-soft);
     font-size:1.05rem;
   }
   .hero-links{
-    margin-top:32px;
+    margin-top:34px;
     display:flex;
-    gap:24px;
+    gap:12px;
     flex-wrap:wrap;
   }
   .hero-links a{
     text-decoration:none;
-    font-size:0.92rem;
-    border-bottom:1px solid var(--ink);
-    padding-bottom:2px;
+    font-size:0.88rem;
+    padding:9px 16px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    background:var(--panel);
+    transition:border-color 0.15s ease, color 0.15s ease;
   }
-  .hero-links a:hover{ border-color:var(--forest); color:var(--forest-deep); }
+  .hero-links a.primary{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#fff;
+  }
+  .hero-links a:not(.primary):hover, .hero-links a:not(.primary):focus-visible{
+    border-color:var(--blue);
+    color:var(--blue-deep);
+  }
+  .hero-links a.primary:hover{ background:var(--blue-deep); border-color:var(--blue-deep); }
 
   /* ---------- Section shell ---------- */
   section{
@@ -123,114 +155,215 @@
     justify-content:space-between;
     align-items:baseline;
     gap:16px;
-    margin-bottom:34px;
+    margin-bottom:36px;
   }
   .section-head h2{
-    font-family:'Fraunces', serif;
-    font-weight:500;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
     font-size:1.5rem;
     letter-spacing:-0.01em;
   }
-  .section-num{
-    font-size:0.85rem;
+  .section-tag{
+    font-size:0.78rem;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Summary ---------- */
+  .summary-block p{
+    max-width:64ch;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+  .summary-stats{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .stat{
+    background:var(--panel);
+    padding:20px 22px;
+  }
+  .stat .num{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1.7rem;
+    color:var(--blue-deep);
+  }
+  .stat .label{
+    margin-top:4px;
+    font-size:0.82rem;
     color:var(--ink-soft);
   }
 
-  /* ---------- About ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:36px;
+  /* ---------- Timeline / experience ---------- */
+  .timeline{
+    position:relative;
+    padding-left:28px;
   }
-  .about-grid p{ color:var(--ink-soft); }
-  .about-grid p + p{ margin-top:14px; }
-
-  .facts{
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:5px;
+    top:6px;
+    bottom:6px;
+    width:1px;
+    background:var(--line);
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:34px;
+  }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:5px;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:var(--panel);
+    border:2px solid var(--blue);
+  }
+  .t-head{
     display:flex;
-    flex-direction:column;
-    gap:14px;
-    border-left:1px solid var(--line);
-    padding-left:20px;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
   }
-  .fact dt{
-    font-size:0.8rem;
+  .t-role{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+  }
+  .t-period{
+    font-size:0.82rem;
+    color:var(--ink-faint);
+  }
+  .t-item ul{
+    margin-top:12px;
+    padding-left:18px;
     color:var(--ink-soft);
   }
-  .fact dd{
-    font-family:'Fraunces', serif;
-    font-size:1.05rem;
+  .t-item li{
+    margin-bottom:8px;
+    font-size:0.96rem;
   }
+  .t-item li::marker{ color:var(--blue); }
 
-  /* ---------- Work ---------- */
+  /* ---------- Projects ---------- */
   .project{
-    padding:26px 0;
+    padding:24px 0;
     border-bottom:1px solid var(--line);
-    display:grid;
-    grid-template-columns: 100px 1fr auto;
-    gap:24px;
-    align-items:baseline;
   }
   .project:first-of-type{ padding-top:0; }
-  .project:last-of-type{ border-bottom:none; }
-  .project-year{
-    font-size:0.85rem;
-    color:var(--ink-soft);
+  .project:last-of-type{ border-bottom:none; padding-bottom:0; }
+  .project-tag{
+    font-size:0.75rem;
+    color:var(--blue-deep);
+    background:rgba(42,78,141,0.08);
+    padding:3px 9px;
+    border-radius:3px;
+    display:inline-block;
+    margin-bottom:10px;
   }
   .project-title{
-    font-family:'Fraunces', serif;
-    font-size:1.2rem;
-    font-weight:500;
-    margin-bottom:6px;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:8px;
   }
   .project-desc{
     color:var(--ink-soft);
     font-size:0.96rem;
-    max-width:48ch;
+    max-width:64ch;
   }
-  .project-tags{
-    margin-top:10px;
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-  }
-  .project-tags span{
-    font-size:0.78rem;
-    color:var(--forest-deep);
-    background:rgba(47,111,98,0.1);
-    padding:3px 9px;
-    border-radius:3px;
-  }
-  .project-link{
-    font-size:0.88rem;
-    text-decoration:none;
-    white-space:nowrap;
-    border-bottom:1px solid var(--ink);
-    padding-bottom:1px;
-    justify-self:end;
-  }
-  .project-link:hover{ color:var(--forest-deep); border-color:var(--forest); }
+  .project-desc + .project-desc{ margin-top:6px; }
 
-  /* ---------- Skills ---------- */
-  .skills-list{
+  /* ---------- Skills matrix ---------- */
+  .matrix{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:22px 24px;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
   }
-  .skills-group h3{
-    font-size:0.82rem;
-    color:var(--ink-soft);
+  .matrix-cell{
+    background:var(--panel);
+    padding:22px 24px;
+  }
+  .matrix-cell h3{
+    font-size:0.8rem;
+    color:var(--ink-faint);
     font-weight:500;
-    margin-bottom:10px;
+    margin-bottom:12px;
   }
-  .skills-group ul{
-    list-style:none;
+  .matrix-cell .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
   }
-  .skills-group li{
-    padding:6px 0;
-    border-bottom:1px solid var(--line);
+  .matrix-cell .chips span{
+    font-size:0.83rem;
+    padding:5px 11px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    color:var(--ink);
+  }
+
+  /* ---------- Recognition ---------- */
+  .recognition{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .rec-item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .rec-mark{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    color:var(--amber);
+    font-size:1.1rem;
+    line-height:1.5;
+  }
+  .rec-item p{ color:var(--ink-soft); font-size:0.96rem; }
+
+  /* ---------- Education / certs two-col ---------- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .two-col h3{
+    font-family:'Space Grotesk', sans-serif;
     font-size:0.95rem;
+    font-weight:600;
+    margin-bottom:16px;
   }
-  .skills-group li:last-child{ border-bottom:none; }
+  .edu-item{ margin-bottom:16px; }
+  .edu-item:last-child{ margin-bottom:0; }
+  .edu-item .school{ font-size:0.96rem; font-weight:500; }
+  .edu-item .deg{ font-size:0.88rem; color:var(--ink-soft); margin-top:2px; }
+  .edu-item .period{ font-size:0.78rem; color:var(--ink-faint); margin-top:2px; }
+
+  .cert-list{ list-style:none; }
+  .cert-list li{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .cert-list li:last-child{ border-bottom:none; }
 
   /* ---------- Contact ---------- */
   .contact-block{
@@ -241,49 +374,54 @@
     flex-wrap:wrap;
   }
   .contact-block h2{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:clamp(1.8rem, 4vw, 2.4rem);
-    max-width:14ch;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(1.7rem, 4vw, 2.3rem);
+    max-width:15ch;
     line-height:1.2;
   }
-  .contact-email{
-    font-size:1rem;
+  .contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end;
+  }
+  .contact-links a{
     text-decoration:none;
+    font-size:0.95rem;
     border-bottom:1px solid var(--ink);
     padding-bottom:2px;
-    white-space:nowrap;
   }
-  .contact-email:hover{ color:var(--forest-deep); border-color:var(--forest); }
+  .contact-links a:hover{ color:var(--blue-deep); border-color:var(--blue); }
 
   footer{
     padding:28px 0 40px;
     display:flex;
     justify-content:space-between;
-    font-size:0.82rem;
-    color:var(--ink-soft);
+    font-size:0.8rem;
+    color:var(--ink-faint);
+    flex-wrap:wrap;
+    gap:10px;
   }
-  footer a{ text-decoration:none; color:var(--ink-soft); }
-  footer a:hover{ color:var(--ink); }
+  footer a{ text-decoration:none; color:var(--ink-faint); }
+  footer a:hover{ color:var(--ink-soft); }
 
-  /* ---------- Focus visibility ---------- */
   a:focus-visible, button:focus-visible{
-    outline:2px solid var(--forest);
+    outline:2px solid var(--blue);
     outline-offset:3px;
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 640px){
+  @media (max-width: 700px){
     .wrap{ padding:0 20px; }
-    .nav-row{ flex-direction:column; align-items:flex-start; gap:14px; }
-    nav ul{ gap:16px; padding:0; }
-    .about-grid{ grid-template-columns:1fr; }
-    .facts{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:18px; }
-    .project{ grid-template-columns:1fr; gap:8px; }
-    .project-link{ justify-self:start; }
-    .skills-list{ grid-template-columns:1fr 1fr; }
+    .nav-row{ padding:16px 20px; }
+    nav ul{ gap:14px; }
+    .summary-stats{ grid-template-columns:1fr; }
+    .matrix{ grid-template-columns:1fr; }
+    .two-col{ grid-template-columns:1fr; gap:28px; }
     .contact-block{ flex-direction:column; align-items:flex-start; }
-    footer{ flex-direction:column; gap:8px; }
+    .contact-links{ align-items:flex-start; }
+    footer{ flex-direction:column; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -294,12 +432,13 @@
 </head>
 <body>
 
-<header class="wrap">
+<header>
   <div class="nav-row">
-    <span class="mark">Alex Rivera</span>
+    <span class="mark">Jaison V J <span>·AI</span></span>
     <nav aria-label="Primary">
       <ul>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -309,112 +448,241 @@
 
 <main>
   <section class="hero wrap" style="border-top:none;">
-    <p class="hero-role">Software engineer, Bengaluru</p>
-    <h1>I build backend systems that stay calm under load.</h1>
-    <p class="hero-lede">Six years shipping payments and infrastructure tooling for growing companies. I care about clear interfaces, honest error messages, and code a teammate can read at 2am.</p>
+    <div class="status-line">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="mono">AI Engineer · 3.5 yrs · Chikkamagaluru, Karnataka</span>
+    </div>
+    <h1>I build AI agents that get real work <em>done</em>, not just demoed.</h1>
+    <p class="hero-lede">I design and ship production AI systems &mdash; multi-agent orchestration, retrieval pipelines, and agent-assisted engineering workflows &mdash; end to end, from model to cloud deployment.</p>
     <div class="hero-links">
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="primary" href="mailto:jaisonvj053@gmail.com">Email me</a>
+      <a href="https://github.com/jaisonvj" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://in.linkedin.com/in/jaisonvj" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://jaisonvj.github.io/portfolio/" target="_blank" rel="noopener">Portfolio</a>
     </div>
   </section>
 
   <section class="wrap" id="about">
     <div class="section-head">
-      <h2>About</h2>
-      <span class="section-num">01</span>
+      <h2>Summary</h2>
+      <span class="section-tag mono">01</span>
     </div>
-    <div class="about-grid">
-      <div>
-        <p>I'm a backend-leaning engineer who spent the last three years at a payments startup, then moved into developer tooling because I liked debugging other people's production incidents more than I expected to.</p>
-        <p>Outside of work I maintain a couple of small open-source libraries and write short notes on distributed systems when something finally clicks.</p>
+    <div class="summary-block">
+      <p>AI Engineer with 3.5 years of experience building production-oriented AI, multi-agent, data, analytics, cloud, and DevOps solutions &mdash; from clinical-trial recommendation and pharmacopeia comparison tools to BI report validation, Databricks pipelines, and agent-assisted software development with Claude Code and Codex.</p>
+      <div class="summary-stats">
+        <div class="stat">
+          <div class="num">3.5</div>
+          <div class="label">Years in AI engineering</div>
+        </div>
+        <div class="stat">
+          <div class="num">3+</div>
+          <div class="label">Delivery excellence awards</div>
+        </div>
+        <div class="stat">
+          <div class="num">6+</div>
+          <div class="label">Production AI systems shipped</div>
+        </div>
       </div>
-      <dl class="facts">
-        <div class="fact">
-          <dt>Currently</dt>
-          <dd>Senior Engineer, Ledgerline</dd>
-        </div>
-        <div class="fact">
-          <dt>Based in</dt>
-          <dd>Bengaluru, India</dd>
-        </div>
-        <div class="fact">
-          <dt>Working in</dt>
-          <dd>Go, TypeScript, Postgres</dd>
-        </div>
-      </dl>
     </div>
   </section>
 
-  <section class="wrap" id="work">
+  <section class="wrap" id="experience">
     <div class="section-head">
-      <h2>Selected work</h2>
-      <span class="section-num">02</span>
+      <h2>Experience</h2>
+      <span class="section-tag mono">02</span>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-role">AI Engineer — AI / Data / Cloud / DevOps</span>
+          <span class="t-period mono">3.5 years</span>
+        </div>
+        <ul>
+          <li>Designed and developed AI-agent and multi-agent solutions for intelligent workflow automation, recommendation, and data-processing tasks.</li>
+          <li>Built an AI-powered clinical-trial recommendation tool for doctors and research professionals to identify relevant trial information.</li>
+          <li>Built an AI agent using OCR to compare pharmacopeia standards across countries, helping research teams prepare accurate, error-free drafts.</li>
+          <li>Developed custom agentic software-development workflows using Claude Code and Codex, with orchestration across development, testing, deployment, and pull-request creation with human approval.</li>
+          <li>Built FirstMate, a multi-agent development tool coordinating multiple Codex and Claude Code agents across the full delivery pipeline.</li>
+          <li>Used n8n for rapid prototyping and workflow automation across AI projects.</li>
+          <li>Built a BI Report Validator for Tableau and Power BI, using integrated connectors to run scheduled UAT and production validation pipelines.</li>
+          <li>Built Databricks data pipelines, synchronization workflows, and data-lake solutions.</li>
+          <li>Developed analytical applications with Dash, and API/agent components with FastAPI, Streamlit, PydanticAI, and LangGraph, using Qdrant, Pinecone, and pgvector for retrieval.</li>
+          <li>Handled deployment and DevOps with shell scripting and Docker, including containerisation and image builds, across AWS and Azure.</li>
+        </ul>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-role">DevOps Engineer Trainee — MResult</span>
+          <span class="t-period mono">2023</span>
+        </div>
+        <ul>
+          <li>Completed a DevOps trainee internship, gaining practical exposure to DevOps-oriented engineering workflows.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="projects">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="section-tag mono">03</span>
     </div>
 
-    <article class="project">
-      <span class="project-year">2025</span>
-      <div>
-        <h3 class="project-title">Reconciliation engine rewrite</h3>
-        <p class="project-desc">Replaced a nightly batch job with an event-driven pipeline, cutting settlement discrepancies from days to minutes for a payments platform processing 40k transactions/day.</p>
-        <div class="project-tags"><span>Go</span><span>Kafka</span><span>Postgres</span></div>
-      </div>
-      <a class="project-link" href="#" target="_blank" rel="noopener">Read the writeup</a>
-    </article>
+    <div class="project">
+      <span class="project-tag">Agentic AI</span>
+      <h3 class="project-title">AI-powered clinical-trial recommendation tool</h3>
+      <p class="project-desc">Agent-based workflows that process a doctor or researcher's requirements and return relevant clinical-trial recommendations, speeding up discovery.</p>
+    </div>
 
-    <article class="project">
-      <span class="project-year">2024</span>
-      <div>
-        <h3 class="project-title">Fielddesk</h3>
-        <p class="project-desc">An open-source CLI for tailing and filtering structured logs across services, built after getting tired of piping grep through jq at 3am.</p>
-        <div class="project-tags"><span>Rust</span><span>CLI</span><span>Open source</span></div>
-      </div>
-      <a class="project-link" href="https://github.com/yourusername/fielddesk" target="_blank" rel="noopener">View repo</a>
-    </article>
+    <div class="project">
+      <span class="project-tag">AI · OCR · Multi-agent</span>
+      <h3 class="project-title">AI agent for pharmacopeia comparison</h3>
+      <p class="project-desc">Uses OCR to read pharmacopeias from different countries and compares results for a requested test, helping research teams catch discrepancies before drafting.</p>
+    </div>
 
-    <article class="project">
-      <span class="project-year">2023</span>
-      <div>
-        <h3 class="project-title">Onboarding self-serve flow</h3>
-        <p class="project-desc">Led backend for a self-serve merchant onboarding flow, reducing manual review time from 3 days to under an hour for 90% of applicants.</p>
-        <div class="project-tags"><span>TypeScript</span><span>Node</span><span>Temporal</span></div>
-      </div>
-      <a class="project-link" href="#" target="_blank" rel="noopener">Case study</a>
-    </article>
+    <div class="project">
+      <span class="project-tag">Claude Code · Codex</span>
+      <h3 class="project-title">FirstMate — multi-agent development platform</h3>
+      <p class="project-desc">Coordinates multiple Codex and Claude Code agents across development, testing, and deployment, with custom skills and automated PR creation gated on human approval.</p>
+    </div>
+
+    <div class="project">
+      <span class="project-tag">Tableau · Power BI</span>
+      <h3 class="project-title">BI Report Validator</h3>
+      <p class="project-desc">Validates Tableau and Power BI reports across UAT and production using integrated connectors that pull real report data on a schedule, replacing manual spot-checks.</p>
+    </div>
+
+    <div class="project">
+      <span class="project-tag">Databricks</span>
+      <h3 class="project-title">Databricks data engineering pipelines</h3>
+      <p class="project-desc">Built pipelines for data processing, synchronization, and data-lake workflows supporting downstream analytics.</p>
+    </div>
+
+    <div class="project">
+      <span class="project-tag">Python · Dash</span>
+      <h3 class="project-title">Interactive analytical tool</h3>
+      <p class="project-desc">An analytical application built with Dash for exploring and visualizing data interactively.</p>
+    </div>
   </section>
 
   <section class="wrap" id="skills">
     <div class="section-head">
       <h2>Skills</h2>
-      <span class="section-num">03</span>
+      <span class="section-tag mono">04</span>
     </div>
-    <div class="skills-list">
-      <div class="skills-group">
-        <h3>Languages</h3>
-        <ul>
-          <li>Go</li>
-          <li>TypeScript</li>
-          <li>Rust</li>
-          <li>SQL</li>
-        </ul>
+    <div class="matrix">
+      <div class="matrix-cell">
+        <h3>Languages & data</h3>
+        <div class="chips">
+          <span>Python</span><span>SQL</span><span>PostgreSQL</span>
+        </div>
       </div>
-      <div class="skills-group">
-        <h3>Infrastructure</h3>
-        <ul>
-          <li>Postgres</li>
-          <li>Kafka</li>
-          <li>Docker</li>
-          <li>Terraform</li>
-        </ul>
+      <div class="matrix-cell">
+        <h3>Agentic AI</h3>
+        <div class="chips">
+          <span>AI Agents</span><span>Multi-Agent Systems</span><span>PydanticAI</span><span>LangGraph</span><span>OCR</span>
+        </div>
       </div>
-      <div class="skills-group">
-        <h3>Practices</h3>
-        <ul>
-          <li>System design</li>
-          <li>Code review</li>
-          <li>Incident response</li>
-          <li>Mentoring</li>
+      <div class="matrix-cell">
+        <h3>AI dev tooling</h3>
+        <div class="chips">
+          <span>Claude Code</span><span>Codex</span><span>n8n</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>Frameworks</h3>
+        <div class="chips">
+          <span>FastAPI</span><span>Streamlit</span><span>Dash</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>Vector databases</h3>
+        <div class="chips">
+          <span>Qdrant</span><span>Pinecone</span><span>pgvector</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>BI & analytics</h3>
+        <div class="chips">
+          <span>Tableau</span><span>Power BI</span><span>Report validation</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>Cloud — AWS</h3>
+        <div class="chips">
+          <span>EC2</span><span>S3</span><span>Lambda</span><span>Bedrock</span><span>RDS</span><span>DynamoDB</span><span>Cognito</span><span>ElastiCache</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>Cloud — Azure</h3>
+        <div class="chips">
+          <span>Virtual Machines</span><span>Blob Storage</span><span>Functions</span><span>Azure OpenAI</span><span>Entra ID</span><span>Cosmos DB</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>DevOps</h3>
+        <div class="chips">
+          <span>Docker</span><span>Shell scripting</span><span>Containerisation</span><span>Deployment automation</span>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <h3>Frontend</h3>
+        <div class="chips">
+          <span>React</span><span>Tailwind CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="recognition">
+    <div class="section-head">
+      <h2>Recognition</h2>
+      <span class="section-tag mono">05</span>
+    </div>
+    <div class="recognition">
+      <div class="rec-item">
+        <span class="rec-mark">&#9670;</span>
+        <p>Received the Pat on the Back award twice for contribution and delivery excellence.</p>
+      </div>
+      <div class="rec-item">
+        <span class="rec-mark">&#9670;</span>
+        <p>Received a Bravo Award for outstanding contribution and delivery excellence on AI projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="education">
+    <div class="section-head">
+      <h2>Education & certifications</h2>
+      <span class="section-tag mono">06</span>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="school">Alva's Institute of Engineering and Technology, Mangalore</div>
+          <div class="deg">B.E./B.Tech, Electronics and Communication Engineering — 8.78 CGPA</div>
+          <div class="period mono">Aug 2019 – Jun 2023</div>
+        </div>
+        <div class="edu-item">
+          <div class="school">Alva's Pre-University College, Mangalore</div>
+          <div class="deg">12th, PCMB — 75.83%</div>
+          <div class="period mono">Mar 2017 – Mar 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="school">D C Memorial Comp High School</div>
+          <div class="deg">10th — 89.92%</div>
+          <div class="period mono">Sep 2016 – Apr 2017</div>
+        </div>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          <li>NPTEL — Microprocessors & Microcontroller, Embedded Systems Internship Certificate</li>
+          <li>Robotic Process Automation, in association with UiPath — Career Edge: Knockdown the Lockdown, TCS iON</li>
         </ul>
+        <h3 style="margin-top:24px;">Languages</h3>
+        <p style="color:var(--ink-soft); font-size:0.92rem;">English, Kannada, Malayalam, Hindi</p>
       </div>
     </div>
   </section>
@@ -422,17 +690,23 @@
   <section class="wrap" id="contact">
     <div class="section-head">
       <h2>Contact</h2>
-      <span class="section-num">04</span>
+      <span class="section-tag mono">07</span>
     </div>
     <div class="contact-block">
-      <h2>Have something worth building? I'd like to hear about it.</h2>
-      <a class="contact-email" href="mailto:[email protected]">[email protected]</a>
+      <h2>Hiring for AI or platform engineering? Let's talk.</h2>
+      <div class="contact-links">
+        <a href="mailto:jaisonvj053@gmail.com">jaisonvj053@gmail.com</a>
+        <a href="tel:+919663768053">+91 96637 68053</a>
+        <a href="https://in.linkedin.com/in/jaisonvj" target="_blank" rel="noopener">in.linkedin.com/in/jaisonvj</a>
+        <a href="https://github.com/jaisonvj" target="_blank" rel="noopener">github.com/jaisonvj</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="wrap">
-  <span>&copy; 2026 Alex Rivera</span>
+  <span>&copy; 2026 Jaison V J</span>
+  <span>Chikkamagaluru, Karnataka, India</span>
   <a href="#top">Back to top</a>
 </footer>
 
