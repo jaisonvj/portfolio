@@ -28,7 +28,3 @@
 .contact .social-links a{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 8px;border:1px solid #63bce04a;border-radius:12px;background:#ffffffa8;color:#386b83;font:600 .68rem 'DM Mono';letter-spacing:.015em;text-transform:none;box-shadow:0 8px 20px #397c970d;transition:.25s}
 .contact .social-links a:hover{transform:translateY(-2px);border-color:#3ca8d3;background:#e6f7fd;color:#155a7c}
 @media(max-width:720px){.hero{min-height:auto;padding:46px 0}.section{padding:52px 0}.contact{padding:54px 0;gap:32px}.skills{padding-bottom:54px}.skill-icons{gap:10px;margin-bottom:18px}.skill-icons img,.skill-icons i,.logo-fallback{width:40px;height:40px;padding:7px}.contact .social-links{grid-template-columns:1fr;gap:8px}.contact .social-links a{justify-content:flex-start;padding-inline:14px}.contact .mail{margin-top:22px;padding:13px 14px}}
-.form-status{min-height:1.1em;margin:0!important;color:#4381a0!important;font:500 .64rem 'DM Mono'!important;letter-spacing:.02em;text-align:center}
-
-/* Keep the portfolio readable even when JavaScript or scroll observers are unavailable. */
-.rise{opacity:1;transform:none;transition:none}
