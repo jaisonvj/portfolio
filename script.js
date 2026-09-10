@@ -1,3 +1,6 @@
+const visitorLogEndpoint='https://autumn-hall-01d6.jaisonvj053.workers.dev/visit';
+const recordVisit=()=>fetch(visitorLogEndpoint,{method:'POST',mode:'cors',keepalive:true,cache:'no-store'}).catch(()=>{});
+if(location.protocol!=='file:'){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',recordVisit,{once:true})}else{recordVisit()}}
 document.getElementById('year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.1});document.querySelectorAll('.rise').forEach(item=>observer.observe(item));
 const iconPath='assets/icons/',logos={OpenAI:'openai.png',n8n:'n8n.png',Python:'python.png',Databricks:'databricks.png','pgvector via PostgreSQL':'postgresql.png',Qdrant:'qdrant.png',AWS:'aws.png',Azure:'azure.png',Docker:'docker.png',FastAPI:'fastapi.png',React:'react.png','Tailwind CSS':'tailwindcss.png'};document.querySelectorAll('.skill-icons img').forEach(icon=>{const file=logos[icon.alt];if(file)icon.src=iconPath+file;icon.addEventListener('error',()=>{const fallback=document.createElement('b');fallback.className='logo-fallback';fallback.title=icon.alt;fallback.textContent=icon.alt.split(' ').map(word=>word[0]).join('').slice(0,3);icon.replaceWith(fallback)})});
